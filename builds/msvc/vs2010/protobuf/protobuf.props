@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup Label="Globals">
+    <_PropertySheetDisplayName>Protobuf Common Settings</_PropertySheetDisplayName>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  
+  <!-- User Interface -->
+  
+  <ItemGroup Label="BuildOptionsExtension">
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)$(ProjectName).xml" />
+  </ItemGroup>
+  
+  <PropertyGroup>
+    <!--<Option-zlib>true</Option-zlib>-->
+  </PropertyGroup>  
+
+  <!-- Configuration -->
+  
+  <ItemDefinitionGroup>
+    <PreBuildEvent>
+      <Command>copy $(BuildRoot)config.h $(RepoRoot)src\</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(RepoRoot)src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <EnablePREfast>false</EnablePREfast>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Option-zlib)' == 'true'">HAVE_ZLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(ConfigurationType)' == 'DynamicLibrary'">LIBPROTOBUF_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  
+  <!-- Dependencies -->
+  
+  <!--<ImportGroup Label="PropertySheets">
+    <Import Project="$(SolutionDir)zlib.import.props" />
+  </ImportGroup>
+  
+  <PropertyGroup Condition="'$(DefaultLinkage)' == 'dynamic'">
+    <Linkage-zlib>dynamic</Linkage-zlib>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(DefaultLinkage)' == 'ltcg'">
+    <Linkage-zlib>ltcg</Linkage-zlib>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(DefaultLinkage)' == 'static'">
+    <Linkage-zlib>static</Linkage-zlib>
+  </PropertyGroup>-->
+
+  <!-- Messages -->
+
+  <Target Name="CustomInfo" BeforeTargets="PrepareForBuild">
+    <Message Text="Will copy $(BuildRoot)config.h -&gt; $(RepoRoot)src\config.h" Importance="high"/>
+  </Target>
+  
+  <Target Name="OptionInfo" BeforeTargets="PrepareForBuild">
+    <Message Text="Option-zlib       : $(Option-zlib)" Importance="high"/>
+    <!--<Message Text="Linkage-zlib      : $(Linkage-zlib)" Importance="high"/>-->
+  </Target>
+
+</Project>

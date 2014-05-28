@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup Label="Globals">
+    <_PropertySheetDisplayName>Protobuf Library Import Settings</_PropertySheetDisplayName>
+  </PropertyGroup>
+
+  <!-- User Interface -->
+  
+  <ItemGroup Label="BuildOptionsExtension">
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)protobuf.import.xml" />
+  </ItemGroup>
+
+  <!-- Linkage -->
+
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\..\..\protobuf\src\google\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Linkage-protobuf)' == 'dynamic'">PROTOBUF_USE_DLLS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>protobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Debug')) != -1">$(ProjectDir)..\..\..\..\..\protobuf\bin\$(PlatformName)\Debug\$(PlatformToolset)\$(Linkage-protobuf)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Release')) != -1">$(ProjectDir)..\..\..\..\..\protobuf\bin\$(PlatformName)\Release\$(PlatformToolset)\$(Linkage-protobuf)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <!-- Copy -->
+
+  <Target Name="Linkage-protobuf-dynamic" AfterTargets="AfterBuild" Condition="'$(Linkage-protobuf)' == 'dynamic'">
+    <Copy Condition="$(Configuration.IndexOf('Debug')) != -1"
+          SourceFiles="$(ProjectDir)..\..\..\..\..\protobuf\bin\$(PlatformName)\Debug\$(PlatformToolset)\dynamic\protobuf.dll"
+          DestinationFiles="$(TargetDir)protobuf.dll"
+          SkipUnchangedFiles="true" />
+    <Copy Condition="$(Configuration.IndexOf('Debug')) != -1"
+          SourceFiles="$(ProjectDir)..\..\..\..\..\protobuf\bin\$(PlatformName)\Debug\$(PlatformToolset)\dynamic\protobuf.pdb"
+          DestinationFiles="$(TargetDir)protobuf.pdb"
+          SkipUnchangedFiles="true" />
+    <Copy Condition="$(Configuration.IndexOf('Release')) != -1"
+          SourceFiles="$(ProjectDir)..\..\..\..\..\protobuf\bin\$(PlatformName)\Release\$(PlatformToolset)\dynamic\protobuf.dll"
+          DestinationFiles="$(TargetDir)protobuf.dll"
+          SkipUnchangedFiles="true" />
+  </Target>
+
+  <!-- Messages -->
+
+  <Target Name="protobuf-info" BeforeTargets="AfterBuild" Condition="'$(Linkage-protobuf)' == 'dynamic'">
+    <Message Text="Copying protobuf.dll -&gt; $(TargetDir)protobuf.dll" Importance="high"/>
+    <Message Text="Copying protobuf.pdb -&gt; $(TargetDir)protobuf.pdb" Importance="high" Condition="$(Configuration.IndexOf('Debug')) != -1" />
+  </Target>
+
+</Project>
