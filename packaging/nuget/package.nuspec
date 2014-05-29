@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+    <metadata minClientVersion="2.5">
+        <id>protobuf_vc120</id>
+        <version>2.5.0.0</version>
+        <title>protobuf_vc120</title>
+        <authors>Google</authors>
+        <owners>Eric Voskuil</owners>
+        <licenseUrl>http://opensource.org/licenses/BSD-3-Clause</licenseUrl>
+        <projectUrl>https://developers.google.com/protocol-buffers/docs/overview</projectUrl>
+        <iconUrl>https://ssl.gstatic.com/codesite/ph/images/search-48.gif</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <developmentDependency>false</developmentDependency>
+        <description>Protocol Buffers are a way of encoding structured data in an efficient yet extensible format. Google uses Protocol Buffers for almost all of its internal RPC protocols and file formats.</description>
+        <summary>Build of protobuf for Visual Studio 2013 (v120) and CTP_Nov2013 compilers.</summary>
+        <releaseNotes>http://protobuf.googlecode.com/svn/trunk/CHANGES.txt</releaseNotes>
+        <copyright>(c) Google, Inc.</copyright>
+        <tags>native, protobuf, IDL, messaging, protocol, buffers, C++</tags>
+        <dependencies>
+        </dependencies>
+    </metadata>
+    <files>
+        <!-- include -->
+                
+        <file src="..\..\src\google\protobuf\*.h"                 target="build\native\include\google\protobuf" />
+        <file src="..\..\src\google\protobuf\io\*.h"              target="build\native\include\google\protobuf\io" />
+        <file src="..\..\src\google\protobuf\compiler\*.h"        target="build\native\include\google\protobuf\compiler" />
+        <file src="..\..\src\google\protobuf\stubs\*.h"           target="build\native\include\google\protobuf\stubs" />
+
+        <!-- targets -->
+      
+        <file src="package.targets" target="build\native\protobuf_vc120.targets" />
+        <file src="package.xml" target="build\native\package.xml" />
+                
+        <!-- libraries -->
+
+        <!-- x86 Dynamic libraries (.dll) -->
+        <file src="..\..\bin\Win32\Release\v120\dynamic\protobuf.dll" target="build\native\bin\protobuf-x86-v120-mt-2_5_0_0.dll" />
+        <file src="..\..\bin\Win32\Debug\v120\dynamic\protobuf.dll" target="build\native\bin\protobuf-x86-v120-mt-gd-2_5_0_0.dll" />
+
+        <!-- x86 Debugging symbols (.pdb) -->
+        <!--<file src="..\..\bin\Win32\Release\v120\dynamic\protobuf.pdb" target="build\native\bin\protobuf-x86-v120-mt-2_5_0_0.pdb" />-->
+        <file src="..\..\bin\Win32\Debug\v120\dynamic\protobuf.pdb" target="build\native\bin\protobuf-x86-v120-mt-gd-2_5_0_0.pdb" />
+
+        <!-- x86 Import libraries (.imp.lib) -->
+        <file src="..\..\bin\Win32\Release\v120\dynamic\protobuf.lib" target="build\native\bin\protobuf-x86-v120-mt-2_5_0_0.imp.lib" />
+        <file src="..\..\bin\Win32\Debug\v120\dynamic\protobuf.lib" target="build\native\bin\protobuf-x86-v120-mt-gd-2_5_0_0.imp.lib" />
+
+        <!-- x86 Export libraries (.exp) -->
+        <file src="..\..\bin\Win32\Release\v120\dynamic\protobuf.exp" target="build\native\bin\protobuf-x86-v120-mt-2_5_0_0.exp" />
+        <file src="..\..\bin\Win32\Debug\v120\dynamic\protobuf.exp" target="build\native\bin\protobuf-x86-v120-mt-gd-2_5_0_0.exp" />
+
+        <!-- x86 Static libraries (.lib) -->
+        <file src="..\..\bin\Win32\Release\v120\static\protobuf.lib" target="build\native\bin\protobuf-x86-v120-mt-s-2_5_0_0.lib" />
+        <file src="..\..\bin\Win32\Debug\v120\static\protobuf.lib" target="build\native\bin\protobuf-x86-v120-mt-sgd-2_5_0_0.lib" />
+
+        <!-- x86 Static link time code generation libraries (.ltcg.lib) -->
+        <file src="..\..\bin\Win32\Release\v120\ltcg\protobuf.lib" target="build\native\bin\protobuf-x86-v120-mt-s-2_5_0_0.ltcg.lib" />
+        <file src="..\..\bin\Win32\Debug\v120\ltcg\protobuf.lib" target="build\native\bin\protobuf-x86-v120-mt-sgd-2_5_0_0.ltcg.lib" />
+
+        <!-- x64 Dynamic libraries (.dll) -->
+        <file src="..\..\bin\x64\Release\v120\dynamic\protobuf.dll" target="build\native\bin\protobuf-x64-v120-mt-2_5_0_0.dll" />
+        <file src="..\..\bin\x64\Debug\v120\dynamic\protobuf.dll" target="build\native\bin\protobuf-x64-v120-mt-gd-2_5_0_0.dll" />
+
+        <!-- x64 Debugging symbols (.pdb) -->
+        <!--<file src="..\..\bin\x64\Release\v120\dynamic\protobuf.pdb" target="build\native\bin\protobuf-x64-v120-mt-2_5_0_0.pdb" />-->
+        <file src="..\..\bin\x64\Debug\v120\dynamic\protobuf.pdb" target="build\native\bin\protobuf-x64-v120-mt-gd-2_5_0_0.pdb" />
+
+        <!-- x64 Import libraries (.imp.lib) -->
+        <file src="..\..\bin\x64\Release\v120\dynamic\protobuf.lib" target="build\native\bin\protobuf-x64-v120-mt-2_5_0_0.imp.lib" />
+        <file src="..\..\bin\x64\Debug\v120\dynamic\protobuf.lib" target="build\native\bin\protobuf-x64-v120-mt-gd-2_5_0_0.imp.lib" />
+
+        <!-- x64 Export libraries (.exp) -->
+        <file src="..\..\bin\x64\Release\v120\dynamic\protobuf.exp" target="build\native\bin\protobuf-x64-v120-mt-2_5_0_0.exp" />
+        <file src="..\..\bin\x64\Debug\v120\dynamic\protobuf.exp" target="build\native\bin\protobuf-x64-v120-mt-gd-2_5_0_0.exp" />
+
+        <!-- x64 Static libraries (.lib) -->
+        <file src="..\..\bin\x64\Release\v120\static\protobuf.lib" target="build\native\bin\protobuf-x64-v120-mt-s-2_5_0_0.lib" />
+        <file src="..\..\bin\x64\Debug\v120\static\protobuf.lib" target="build\native\bin\protobuf-x64-v120-mt-sgd-2_5_0_0.lib" />
+
+        <!-- x64 Static link time code generation libraries (.ltcg.lib) -->
+        <file src="..\..\bin\x64\Release\v120\ltcg\protobuf.lib" target="build\native\bin\protobuf-x64-v120-mt-s-2_5_0_0.ltcg.lib" />
+        <file src="..\..\bin\x64\Debug\v120\ltcg\protobuf.lib" target="build\native\bin\protobuf-x64-v120-mt-sgd-2_5_0_0.ltcg.lib" />
+    </files>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+</package>
