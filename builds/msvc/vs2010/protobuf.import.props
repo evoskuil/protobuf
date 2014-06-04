@@ -19,7 +19,7 @@
       <PreprocessorDefinitions Condition="'$(Linkage-protobuf)' == 'dynamic'">PROTOBUF_USE_DLLS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>protobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Linkage-protobuf)' != ''">protobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Debug')) != -1">$(ProjectDir)..\..\..\..\..\protobuf\bin\$(PlatformName)\Debug\$(PlatformToolset)\$(Linkage-protobuf)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Release')) != -1">$(ProjectDir)..\..\..\..\..\protobuf\bin\$(PlatformName)\Release\$(PlatformToolset)\$(Linkage-protobuf)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
