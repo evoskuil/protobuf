@@ -74,6 +74,7 @@
     <ClInclude Include="..\..\..\..\src\google\protobuf\io\coded_stream_inl.h" />
     <ClInclude Include="..\..\..\..\src\google\protobuf\io\gzip_stream.h" />
     <ClInclude Include="..\..\..\..\src\google\protobuf\io\printer.h" />
+    <ClInclude Include="..\..\..\..\src\google\protobuf\io\strtod.h" />
     <ClInclude Include="..\..\..\..\src\google\protobuf\io\tokenizer.h" />
     <ClInclude Include="..\..\..\..\src\google\protobuf\io\zero_copy_stream.h" />
     <ClInclude Include="..\..\..\..\src\google\protobuf\io\zero_copy_stream_impl.h" />
@@ -115,6 +116,7 @@
     <ClCompile Include="..\..\..\..\src\google\protobuf\compiler\parser.cc" />
     <ClCompile Include="..\..\..\..\src\google\protobuf\io\coded_stream.cc" />
     <ClCompile Include="..\..\..\..\src\google\protobuf\io\printer.cc" />
+    <ClCompile Include="..\..\..\..\src\google\protobuf\io\strtod.cc" />
     <ClCompile Include="..\..\..\..\src\google\protobuf\io\tokenizer.cc" />
     <ClCompile Include="..\..\..\..\src\google\protobuf\io\zero_copy_stream.cc" />
     <ClCompile Include="..\..\..\..\src\google\protobuf\io\zero_copy_stream_impl.cc" />

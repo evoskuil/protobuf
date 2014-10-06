@@ -20,13 +20,13 @@
         <authors>Google</authors>
         <owners>Eric Voskuil</owners>
         <licenseUrl>http://opensource.org/licenses/BSD-3-Clause</licenseUrl>
-        <projectUrl>https://developers.google.com/protocol-buffers/docs/overview</projectUrl>
+        <projectUrl>https://github.com/google/protobuf</projectUrl>
         <iconUrl>https://ssl.gstatic.com/codesite/ph/images/search-48.gif</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <developmentDependency>false</developmentDependency>
         <description>Protocol Buffers are a way of encoding structured data in an efficient yet extensible format. Google uses Protocol Buffers for almost all of its internal RPC protocols and file formats.</description>
         <summary>Build of protobuf for Visual Studio 2013 (v120) and CTP_Nov2013 compilers.</summary>
-        <releaseNotes>http://protobuf.googlecode.com/svn/trunk/CHANGES.txt</releaseNotes>
+        <releaseNotes>https://github.com/google/protobuf/blob/master/CHANGES.txt</releaseNotes>
         <copyright>(c) Google, Inc.</copyright>
         <tags>native, protobuf, IDL, messaging, protocol, buffers, C++</tags>
         <dependencies>

@@ -124,6 +124,9 @@
     <ClInclude Include="..\..\..\..\src\config.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\src\google\protobuf\io\strtod.h">
+      <Filter>include\io</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\resource.h">
@@ -284,6 +287,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\google\protobuf\wire_format_lite.cc">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\google\protobuf\io\strtod.cc">
+      <Filter>src\io</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
