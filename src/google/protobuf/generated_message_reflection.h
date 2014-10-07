@@ -47,6 +47,12 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/unknown_field_set.h>
 
+// HACK: protobuf breaks because of GetMessage.
+#ifdef _WIN32
+#ifdef GetMessage
+#undef GetMessage
+#endif
+#endif
 
 namespace google {
 namespace upb {
