@@ -35,7 +35,9 @@
 #           s/RuntimeLibrary="4"/RuntimeLibrary="2"/g;' gtest/msvc/*.vcproj
 
 # TODO(kenton):  Remove the ",no-obsolete" part and fix the resulting warnings.
-autoreconf -f -i -Wall,no-obsolete
+#autoreconf -f -i -Wall,no-obsolete
+
+autoreconf -f -i
 
 rm -rf autom4te.cache config.h.in~
 exit 0
