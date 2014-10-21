@@ -48,6 +48,9 @@ AC_LANG([C++])
 ACX_USE_SYSTEM_EXTENSIONS
 AM_CONDITIONAL(GCC, test "$GCC" = yes)   # let the Makefile know if we're gcc
 
+# Suppress distracting warnings (libbitcoin build addition).
+CXXFLAGS="$CXXFLAGS -Wno-return-type -Wno-maybe-uninitialized -Wno-unused-local-typedefs"
+
 # test_util.cc takes forever to compile with GCC and optimization turned on.
 AC_MSG_CHECKING([C++ compiler flags...])
 AS_IF([test "x${ac_cv_env_CXXFLAGS_set}" = "x"],[
