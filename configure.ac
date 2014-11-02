@@ -49,7 +49,12 @@ ACX_USE_SYSTEM_EXTENSIONS
 AM_CONDITIONAL(GCC, test "$GCC" = yes)   # let the Makefile know if we're gcc
 
 # Suppress distracting warnings (libbitcoin build addition).
-CXXFLAGS="$CXXFLAGS -Wno-return-type -Wno-maybe-uninitialized -Wno-unused-local-typedefs"
+AX_CHECK_COMPILE_FLAG([-Wno-return-type],
+    [CXXFLAGS="$CXXFLAGS -Wno-return-type"])
+AX_CHECK_COMPILE_FLAG([-Wno-maybe-uninitialized],
+    [CXXFLAGS="$CXXFLAGS -Wno-maybe-uninitialized"])
+AX_CHECK_COMPILE_FLAG([-Wno-unused-local-typedefs],
+    [CXXFLAGS="$CXXFLAGS -Wno-unused-local-typedefs"])
 
 # test_util.cc takes forever to compile with GCC and optimization turned on.
 AC_MSG_CHECKING([C++ compiler flags...])
