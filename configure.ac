@@ -48,6 +48,9 @@ AC_LANG([C++])
 ACX_USE_SYSTEM_EXTENSIONS
 AM_CONDITIONAL(GCC, test "$GCC" = yes)   # let the Makefile know if we're gcc
 
+# Enable silent builds (libbitcoin build addition).
+m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
+
 # Suppress distracting warnings (libbitcoin build addition).
 AX_CHECK_COMPILE_FLAG([-Wno-return-type],
     [CXXFLAGS="$CXXFLAGS -Wno-return-type"])
