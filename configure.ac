@@ -52,6 +52,8 @@ AM_CONDITIONAL(GCC, test "$GCC" = yes)   # let the Makefile know if we're gcc
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
 # Suppress distracting warnings (libbitcoin build addition).
+AX_CHECK_COMPILE_FLAG([-Wno-unused-function],
+    [CXXFLAGS="$CXXFLAGS -Wno-unused-function"])
 AX_CHECK_COMPILE_FLAG([-Wno-return-type],
     [CXXFLAGS="$CXXFLAGS -Wno-return-type"])
 AX_CHECK_COMPILE_FLAG([-Wno-maybe-uninitialized],
