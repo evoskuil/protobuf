@@ -16,6 +16,7 @@ AC_INIT([Protocol Buffers],[2.6.0],[protobuf@googlegroups.com],[protobuf])
 
 AM_MAINTAINER_MODE([enable])
 
+AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_SRCDIR(src/google/protobuf/message.cc)
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
