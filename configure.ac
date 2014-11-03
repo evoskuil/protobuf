@@ -61,6 +61,8 @@ AX_CHECK_COMPILE_FLAG([-Wno-maybe-uninitialized],
     [CXXFLAGS="$CXXFLAGS -Wno-maybe-uninitialized"])
 AX_CHECK_COMPILE_FLAG([-Wno-unused-local-typedefs],
     [CXXFLAGS="$CXXFLAGS -Wno-unused-local-typedefs"])
+AX_CHECK_COMPILE_FLAG([-Wno-unknown-warning-option],
+    [CXXFLAGS="$CXXFLAGS -Wno-unknown-warning-option"])
 
 # test_util.cc takes forever to compile with GCC and optimization turned on.
 AC_MSG_CHECKING([C++ compiler flags...])
