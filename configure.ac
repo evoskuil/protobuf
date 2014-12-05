@@ -49,20 +49,33 @@ AC_LANG([C++])
 ACX_USE_SYSTEM_EXTENSIONS
 AM_CONDITIONAL(GCC, test "$GCC" = yes)   # let the Makefile know if we're gcc
 
-# Enable silent builds (libbitcoin build addition).
-m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
-
 # Suppress distracting warnings (libbitcoin build addition).
-AX_CHECK_COMPILE_FLAG([-Wno-unused-function],
-    [CXXFLAGS="$CXXFLAGS -Wno-unused-function"])
+#==============================================================================
 AX_CHECK_COMPILE_FLAG([-Wno-return-type],
     [CXXFLAGS="$CXXFLAGS -Wno-return-type"])
-AX_CHECK_COMPILE_FLAG([-Wno-maybe-uninitialized],
-    [CXXFLAGS="$CXXFLAGS -Wno-maybe-uninitialized"])
-AX_CHECK_COMPILE_FLAG([-Wno-unused-local-typedefs],
-    [CXXFLAGS="$CXXFLAGS -Wno-unused-local-typedefs"])
-AX_CHECK_COMPILE_FLAG([-Wno-unknown-warning-option],
-    [CXXFLAGS="$CXXFLAGS -Wno-unknown-warning-option"])
+
+AX_CHECK_COMPILE_FLAG([-Wno-unused-function],
+    [CXXFLAGS="$CXXFLAGS -Wno-unused-function"])
+
+AX_CHECK_COMPILE_FLAG([-Wno-unused-parameter],
+    [CXXFLAGS="$CXXFLAGS -Wno-unused-parameter"])
+
+AS_CASE([${CC}], [*clang*],
+    [AX_CHECK_COMPILE_FLAG([-Wno-sign-compare],
+        [CXXFLAGS="$CXXFLAGS -Wno-sign-compare"])])
+
+AS_CASE([${CC}], [*clang*],
+    [AX_CHECK_COMPILE_FLAG([-Wno-sometimes-uninitialized],
+        [CXXFLAGS="$CXXFLAGS -Wno-sometimes-uninitialized"])])
+
+AS_CASE([${CC}], [*gcc*],
+    [AX_CHECK_COMPILE_FLAG([-Wno-maybe-uninitialized],
+        [CXXFLAGS="$CXXFLAGS -Wno-maybe-uninitialized"])])
+
+AS_CASE([${CC}], [*gcc*],
+    [AX_CHECK_COMPILE_FLAG([-Wno-unused-local-typedefs],
+        [CXXFLAGS="$CXXFLAGS -Wno-unused-local-typedefs"])])
+#==============================================================================
 
 # test_util.cc takes forever to compile with GCC and optimization turned on.
 AC_MSG_CHECKING([C++ compiler flags...])
